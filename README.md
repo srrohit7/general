@@ -9,4 +9,3 @@ General scripts and modules for the group.
 - `hpc`: Code for running simulations on High-Performance Compute clusters (Tekla2, MN4).
 - `ml`: Code related to Machine Learning.
 - `render`: Tools for rendering, e.g. color schemes.
-- `seminars`: Source codes for group seminars.
