@@ -1,0 +1,44 @@
+#!/bin/bash 
+
+# Rodrigo García-Muelas. April 2013.
+
+if [ -e STOPCAR ]  ; then rm STOPCAR ; fi 
+
+# security comprobation
+if [ -e CONTCAR ]  ; then # exist
+if [ -s CONTCAR ]  ; then # nonzero lenght 
+
+# do I need to account? 
+if [ -e poscar_1 ] ; then 
+
+# count
+i=0
+j=0
+while [ $j = 0 ] ; do
+i=$[$i+1]
+if  -e poscar_$i  ; then j=0 ; else j=1 ; fi
+done 
+
+# save files
+mv POSCAR poscar_$i
+mv OUTCAR outcar_$i
+mv CONTCAR POSCAR
+mv OSZICAR oszicar_$i
+mv vasprun.xml vasprun_$i.xml 
+
+else 
+
+mv POSCAR poscar_1
+mv OUTCAR outcar_1
+mv CONTCAR POSCAR
+mv OSZICAR oszicar_1
+mv vasprun.xml vasprun_1.xml 
+
+fi 
+
+else
+rm CONTCAR # if zero lenght
+fi 
+
+fi
+

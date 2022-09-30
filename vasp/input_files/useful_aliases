@@ -1,0 +1,13 @@
+# Useful aliases and paths
+
+export PATH=$PATH:/home/$username/bin
+
+alias teklahome='ssh $username@tekla2.iciq.es'
+#alias unmount ='sudo umount -l p-mn-projects'
+alias mnhome='ssh $mn_id@mn1.bsc.es'
+alias mndata='ssh $mn_id@dt01.bsc.es'
+alias mna="sshfs $mn_id@dt01.bsc.es: ~/m-mn-home/ ; sshfs iciq72500@dt01.bsc.es:/gpfs/scratch/iciq72/iciq72500 ~/n-mn-scratch/ ; sshfs iciq72500@dt01.bsc.es:/gpfs/projects/iciq72 ~/p-mn-projects "
+alias gotekla='nowdir=`pwd` ; nowdirk=${nowdir/teklahome\//} ; ssh -t $username@tekla2.iciq.es "cd $nowdirk ; bash"'
+alias goproject='nowdir=`pwd` ; nowdirk=${nowdir/"home/$username/p-mn-projects"\//}; maredir=/gpfs/projects/iciq72${nowdirk}; ssh -t  $mn_id@mn2.bsc.es "cd $maredir; bash"'
+alias gohome='nowdir=`pwd` ; nowdirk=${nowdir/"home/$username/m-mn-home"\//}; maredir=/home/iciq72/$mn_id${nowdirk}; ssh -t  iciq72500@mn2.bsc.es "cd $maredir; bash"'
+
