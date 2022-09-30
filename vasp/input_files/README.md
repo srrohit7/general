@@ -2,7 +2,7 @@
 
 Please replace $username with your tekla username and $mn_id with marenostrum id. You can do this easily using the find and replace command on vi. :%s/$username/yourusername/g 
 
-#VASP input files 
+# VASP input files 
 
 Checklist for VASP beginners http://aliga.iciq.es/wiki/index.php/VASP_beginners    
 
